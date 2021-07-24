@@ -1,0 +1,109 @@
+/*  
+ * Geshi stylesheet
+ * 
+ * CyberAsylum.eu
+ * dark theme by niekto@niekde.sk (Jaroslav Petras)
+ * there is no licence and you can use it, copy it, sell it
+ * or burn it
+ *
+ */
+
+/* all			*/
+.code {
+    /* border: none !important; */
+}
+
+/* lines		*/
+.code .li1 {
+    background: #252525 !important;
+}
+
+.code .li2 {
+    background: #272727 !important;
+}
+
+/* brackets		*/
+.code .br0 {
+    color: #bfbfbf !important;
+}
+
+
+/* comments		*/
+.code .co0,
+.code .co1,
+.code .coMULTI {
+    color: #7a7a75 !important;
+}
+
+/* strings		*/
+.code .st0,
+.code .st_h {
+    color: #ff4444 !important;
+}
+
+
+/* methods		*/
+.code .me0,
+.code .me1 {
+    color: #ffffff !important;
+}
+
+.code .me2 {
+    color: #ffcc66 !important;
+}
+
+
+
+/* keywords		*/
+.code .kw1 {
+    color: #99ee00 !important;
+}
+
+.code .kw2 {
+    color: #eeaa22 !important;
+}
+
+.code .kw3 {
+    color: #dd88ff !important;
+}
+
+.code .kw4 {
+    color: #ff7744 !important;
+}
+
+/* operators		*/
+.code .sy0 {
+    color: #44ffbb !important;
+}
+
+/* numbers		*/
+.code .nu0 {
+    color: #ff2288 !important;
+}
+
+/* variables		*/
+.code .re0 {
+    color: #88c0ff !important;
+}
+
+.code .re1 {
+    color: #88c0ff !important;
+}
+
+.code .re2 {
+    color: #ccddff !important;
+}
+
+.code .re3 {
+    color: #88c0ff !important;
+}
+
+.code .re4 {
+    color: #88c0ff !important;
+}
+
+.code .re5 {
+    color: #ddddff !important;
+}
+
+/* EOF			*/

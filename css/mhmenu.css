@@ -1,0 +1,193 @@
+/* 
+Minimal Hamburger Overlay Navigation Drawer In CSS
+
+https://www.cssscript.com/hamburger-overlay-navigation-drawer/
+
+
+*/
+
+.test {
+    border: 1px dashed red;
+}
+
+.mh-menu {
+    position: fixed;
+    bottom: 48px;
+    right: 0;
+    /* left */
+    /* background: __background_alt__; */
+    /* height: 100vh; 전체 높이로 하려면 */
+    width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: all var(--menu-speed) ease;
+}
+
+.mh-menu>div {
+    position: relative;
+    top: 0;
+    left: 0;
+    /* height: 100%; */
+    /* width: 100%; */
+    width: 0;
+    height: 0;
+    flex: none;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.mh-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.mh-menu li {
+    padding: 1em 0;
+}
+
+.mh-menu>div a {
+    text-decoration: none;
+    color: #fafafa;
+    /* font-size: 1.5rem; */
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.mh-menu a:hover {
+    color: __link__;
+    transition: color 0.3s ease-in;
+}
+
+.mh-menu-wrap {
+    position: fixed;
+    /* top: 0; */
+    /* left: 0; */
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.mh-menu-wrap .toggler {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    right: 5px;
+    bottom: 5px;
+    opacity: 0;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.mh-menu-wrap .hamburger {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+/* Hamburger line */
+
+.mh-menu-wrap .hamburger>div {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    /* 가로줄 두께 */
+    background: __theme_color__;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+
+/* Hamburger top & bottom line */
+
+.mh-menu-wrap .hamburger>div:before,
+.mh-menu-wrap .hamburger>div:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: inherit;
+    height: 3px;
+    /* 세로줄 두께 */
+    width: 100%;
+    z-index: 1;
+    transform: rotate(90deg);
+    /* 햄버거를 십자가로  */
+}
+
+
+/* .mh-menu-wrap .hamburger>div:before {
+    top: 2px;
+}
+
+.mh-menu-wrap .hamburger>div:after {
+    top: -1px;
+} */
+
+
+/* Toggler Animation */
+
+.mh-menu-wrap .toggler:checked+.hamburger>div {
+    transform: rotate(135deg);
+}
+
+.mh-menu-wrap .toggler:checked+.hamburger>div:before,
+.mh-menu-wrap .toggler:checked+.hamburger>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+
+/* Rotate on hover when checked */
+
+.mh-menu-wrap .toggler:checked:hover+.hamburger>div {
+    transform: rotate(225deg);
+}
+
+
+/* Show Menu */
+
+.mh-menu-wrap .toggler:checked~.mh-menu {
+    opacity: 1;
+    width: 200px;
+    transition: all var(--menu-speed) ease;
+}
+
+.mh-menu-wrap .toggler:checked~.mh-menu>div {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+    width: 100%;
+    height: 100%;
+}
+
+.mh-menu-wrap .toggler:checked~.mh-menu>div a {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}

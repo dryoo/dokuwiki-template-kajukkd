@@ -1,0 +1,122 @@
+/**
+ * This file provides style changes for small screens.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+
+
+/* for detecting media queries in JavaScript (see script.js): */
+
+#screen__mode {
+    position: relative;
+    z-index: 0;
+}
+
+
+/* for screen widths in the tablet range ******** ********************************/
+
+@media only screen and (max-width: @ini_tablet_width) {
+    #screen__mode {
+        z-index: 1;
+        /* for detecting media queries in JavaScript (see script.js) */
+    }
+}
+
+
+/* for screen widths in the smartphone range ****** ***** **************/
+
+@media only screen and (max-width: @ini_phone_width) {
+    #screen__mode {
+        z-index: 2;
+        /* for detecting media queries in JavaScript (see script.js) */
+    }
+    #dokuwiki__site {
+        padding: 0 0.3em
+    }
+    #dokuwiki__aside {
+        width: 100%;
+        float: none;
+        margin-bottom: 1.4em;
+    }
+    #dokuwiki__aside ul {
+        padding: 0;
+    }
+    #dokuwiki__aside>.pad {
+        margin: 0;
+    }
+    .hasSidebar #dokuwiki__content {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .hasSidebar #dokuwiki__content>.pad {
+        margin-left: 0;
+    }
+    [dir=rtl] .hasSidebar #dokuwiki__content>.pad {
+        margin-right: 0;
+    }
+    #dokuwiki__header .headings {
+        /* margin: 2.1em 0 0; */
+    }
+    #dokuwiki__header .tools {
+        margin-bottom: .7em;
+    }
+    #dokuwiki__header .headings,
+    #dokuwiki__header .tools,
+    #dokuwiki__header .tools li {
+        float: none;
+        text-align: left;
+    }
+    #dw__search button {
+        display: none
+    }
+    #dokuwiki__header form.search #qsearch__in {
+        width: 9em;
+    }
+    [dir=rtl] #dokuwiki__header .tools,
+    [dir=rtl] #dokuwiki__header .tools li {
+        float: none;
+        text-align: right;
+    }
+    [dir=rtl] #dokuwiki__header .headings {
+        float: none;
+        text-align: right;
+    }
+    #dokuwiki__sitetools ul {
+        padding: 0;
+    }
+    #dokuwiki__sitetools li {
+        /* margin: 0 1.5em 0 0; */
+    }
+    [dir=rtl] #dokuwiki__sitetools li {
+        /* margin: 0 0 0 1.5em; */
+    }
+    #dokuwiki__header div.breadcrumbs {
+        margin-bottom: .7em;
+    }
+    #dokuwiki__header ul.a11y.skip {
+        left: auto !important;
+        right: 1em !important;
+        top: 3.1em !important;
+        width: auto !important;
+        height: auto !important;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    [dir=rtl] #dokuwiki__header ul.a11y.skip {
+        right: auto !important;
+        left: 1em !important;
+    }
+    .dokuwiki .mediaright,
+    .dokuwiki .medialeft {
+        float: none;
+    }
+    #dw__toc {
+        width: 100%;
+        margin: 0.5em 0;
+    }
+}
+
+
+/* /@media */

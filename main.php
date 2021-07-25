@@ -2,9 +2,9 @@
 
 /**
  * 
- * Dokuwiki template Kajukk Dark
- * 
- * @link     http://dokuwiki.org/template:kajukkd
+ * Dokuwiki template Kajukk Dark 
+ *  
+ * @link     https://dokuwiki.org/template:kajukkd
  * @author   S.C. Yoo <dryoo@live.com>
  * 
  * Based on DokuWiki Starter Template
@@ -54,7 +54,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
     </script>
     <?php tpl_metaheaders() ?>
     <!-- <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2" href="myfont.woff2"> -->
-    <link rel="stylesheet" href="lib/tpl/kajukkd/fonts/style.css">
+    <!-- <link rel="stylesheet" href="lib/tpl/kajukkd/fonts/style.css"> -->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>

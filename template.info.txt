@@ -1,7 +1,7 @@
-base     star
+base     starter
 author   dryoo
 email    dryoo@live.com
 date     2021-01-25
 name     kajukk dark
-desc     I stared this from Starter Template 
+desc    Another minialistic dark template (I stared this from Starter Template)
 url      https://www.dokuwiki.org/template:kajukk_dark

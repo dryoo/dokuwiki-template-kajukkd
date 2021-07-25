@@ -1,2 +1,24 @@
-See template.info.txt for main info
-See COPYING for license info
+
+ * Dokuwiki template Kajukk Dark 
+ *  
+ * @link     https://www.dokuwiki.org/template:kajukkd
+ * @author   S.C. Yoo <dryoo@live.com>
+ * 
+ * Based on DokuWiki Starter Template
+ *
+ * @link     http://dokuwiki.org/template:starter
+ * @author   Anika Henke <anika@selfthinker.org>
+ * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * 
+ * Does not support IE9 
+ * 
+ * Open source
+ * 
+ *  Material Design Off Canvas Menu (the MIT license)
+ *    https://github.com/callmenick/Material-Menu
+ * 
+ *  Minimal Hamburger Overlay Navigation Drawer In CSS
+ *    https://www.cssscript.com/hamburger-overlay-navigation-drawer/
+ * 
+ *  GeShi Dark mode CSS from 
+ *    https://cyberasylum.eu/how-to-change-geshi-stylesheet

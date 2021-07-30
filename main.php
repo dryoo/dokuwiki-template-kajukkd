@@ -75,7 +75,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
                 <div class="headings">
                     <h1>
                         <?php // tpl_link(wl(), '<img src="' . _tpl_logo(). '" alt="' . $conf['title'] . '" />', 'id="dokuwiki__top" accesskey="h" title="[H]"')  ?>
-                        <?php _tpl_logo() ?>
+                        <?php _tpl_icon() ?>
                         <div class="clearer"></div>
                 </div>
                 <?php tpl_searchform() ?>

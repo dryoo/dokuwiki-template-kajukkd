@@ -66,6 +66,25 @@ function _tpl_logo($return = false)
     echo $out;
     return true;
 }
+
+
+function _tpl_icon($return = false)
+{
+    global $INFO;
+    global $conf;
+
+    $logoSize = array();
+    $logo = tpl_getMediaFile(array(':' . $INFO['namespace'] . ':icon.png',':' . $INFO['namespace'] . ':logo.jpg', ':' . $INFO['namespace'] . ':logo.png',  ':logo.png', ':wiki:dokuwiki-128.png', ':wiki:logo.png', 'images/logo.png'), false, $logoSize);
+    $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
+    //  $out=tpl_link(wl('..:'),$out,'',1);
+    $out = tpl_link(wl($INFO['namespace'] . ':' . $conf['start'], '', true), $out, '', 1);
+    if ($return) return $out;
+    echo $out;
+    return true;
+}
+
+
+
 function _tpl_background($return = false)
 {
     global $INFO;

@@ -36,6 +36,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>" lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js" style="background-image: url('<?php if (!$INFO['ismobile']) echo _tpl_background(true); ?>');">
+
 <head>
     <meta charset="UTF-8" />
     <title>
@@ -53,12 +54,29 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
         })(document.documentElement)
     </script>
     <?php tpl_metaheaders() ?>
+    <?php
+    /* 
+     * support for https://www.dokuwiki.org/plugin:adultcontent
+     */
+    if (($ACT == "show") || ($ACT == "showtag")) $noadsense = false;
+    else $noadsense = true;
+    if (p_get_metadata($ID, "adult")) $noadsense = true;
+    /* 
+     *  support for https://github.com/tatewake/dokuwiki-plugin-googleads/
+     */
+    if (($ACT != "edit") && (!$noadsense)) :
+        if (file_exists(DOKU_PLUGIN . 'googleads/code.php')) include_once(DOKU_PLUGIN . 'googleads/code.php');
+        if (function_exists('gads_code')) gads_code();
+    endif;
+    ?>
     <!-- <link rel="preload" as="font" crossorigin="crossorigin" type="font/woff2" href="myfont.woff2"> -->
     <!-- <link rel="stylesheet" href="lib/tpl/kajukkd/fonts/style.css"> -->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-</head> 
+
+</head>
+
 <body>
     <?php /* the "dokuwiki__top" id is needed somewhere at the top, because that's where the "back to top" button/link links to */ ?>
     <?php /* tpl_classes() provides useful CSS classes; if you choose not to use it, the 'dokuwiki' class at least
@@ -74,18 +92,19 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
                 <?php tpl_includeFile('header.html') ?>
                 <div class="headings">
                     <h1>
-                        <?php // tpl_link(wl(), '<img src="' . _tpl_logo(). '" alt="' . $conf['title'] . '" />', 'id="dokuwiki__top" accesskey="h" title="[H]"')  ?>
+                        <?php // tpl_link(wl(), '<img src="' . _tpl_logo(). '" alt="' . $conf['title'] . '" />', 'id="dokuwiki__top" accesskey="h" title="[H]"')  
+                        ?>
                         <?php _tpl_icon() ?>
                         <div class="clearer"></div>
                 </div>
                 <?php tpl_searchform() ?>
-                <div id="smartbtn" class="tools" >
+                <div id="smartbtn" class="tools">
                     <?php //if ($INFO['userinfo'] != "") : /* If logged-in */
 
                     ?>
-                    <?php _tpl_smartbtn();?>
+                    <?php _tpl_smartbtn(); ?>
 
-                  
+
                     <?php  /* if (!empty($_SERVER['REMOTE_USER'])) {
                         echo '<div class="user">';
 
@@ -242,7 +261,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
             ?>
                 <nav id="dokuwiki__usertools" aria-labelledby="dokuwiki__usertools_heading">
                     <h3 class="a11y" id="dokuwiki__usertools_heading"><?php echo $lang['user_tools'] ?></h3>
-                    <ul> 
+                    <ul>
                         <?php if (file_exists(DOKU_INC . 'inc/Menu/UserMenu.php')) {
                             /* the first parameter is for an additional class, the second for if SVGs should be added */
                             echo (new \dokuwiki\Menu\UserMenu())->getListItems('action ', false);

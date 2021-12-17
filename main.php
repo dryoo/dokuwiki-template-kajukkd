@@ -219,7 +219,9 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
         </div>
     </div><!-- /site -->
     <!--- 메뉴~~    --->
+    <div class="mm-menu-bg"></div>
     <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+                               
     <nav id="mm-menu" class="mm-menu">
 
         <!-- ********** ASIDE ********** -->

@@ -3,5 +3,5 @@ author   dryoo
 email    dryoo@live.com
 date     2022-06-24
 name     kajukkd
-desc     Another minimalistic dark template 
+desc     Another minimalistic dark template.
 url      https://www.dokuwiki.org/template:kajukkd

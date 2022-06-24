@@ -348,16 +348,21 @@ kbd {
 }
 
 pre {
-    border-left: 3px solid __border__;
-    padding: 0 .2em;
+    border-left: .5rem solid __border__;
+    padding: 0 .5rem;
     overflow: auto;
     word-wrap: normal;
+
+    border-radius:__border_radius__ ;
+    background-color: rgba(69,153,255,0.1); 
 }
 
 blockquote {
     padding: 0 .5em;
-    border: solid __border__;
-    border-width: 0 0 0 .25em;
+    border: solid rgb(69,255,153);
+    border-width: 0 0 0 .5rem;
+    border-radius:__border_radius__ ;
+    background-color: rgba(69,255,153,0.1); 
 }
 
 [dir=rtl] blockquote {

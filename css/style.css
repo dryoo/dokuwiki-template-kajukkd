@@ -9,10 +9,7 @@ html {
     background-position: center center;
 }
 
-body {
-    background-color: __background__;
-}
-
+ 
 .test {
     border: 1px solid red;
 }

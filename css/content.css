@@ -121,12 +121,12 @@
 
 .dokuwiki dl.code dt,
 .dokuwiki dl.file dt {
-    background-color: __background_alt__;
-    border: solid __border__;
-    border-width: 1px 1px 0;
+    /* background-color: __background_alt__; */
+    /* border: solid __border__; */
+    /* border-width: 1px 1px 0; */
     color: inherit;
     display: inline;
-    padding: .1em .5em .2em;
+    /* padding: .1em .5em .2em; */
     margin-left: 1em;
 }
 
@@ -150,7 +150,8 @@
 .dokuwiki pre.file,
 .dokuwiki dl.file pre,
 .dokuwiki dl.file dt {
-    border-color: __text_neu__;
+    border-color: rgba(130,49,87,1); 
+    background-color:rgba(130,49,87,0.1);  
 }
 
 

@@ -1,3 +1,5 @@
+
+
 /**
  * This file provides the most basic styles.
  *
@@ -43,7 +45,7 @@ h6 {
     color: __text_neu__;
     background-color: inherit;
     padding: 0;
-    line-height: 1.2;
+    line-height: 1.5;
     clear: left;
     /* ideally 'both', but problems with toc */
 }
@@ -310,6 +312,7 @@ hr {
     height: 0;
     width: 100%;
     clear: both;
+    border-color: __background_alt__;
 }
 
 acronym,

@@ -64,11 +64,13 @@
 }
 
 .dokuwiki img.medialeft {
-    margin: .2em 1.5em .2em 0;
+    /* margin: .2em 1.5em .2em 0; */
+    margin: 0.25rem;
 }
 
 .dokuwiki img.mediaright {
-    margin: .2em 0 .2em 1.5em;
+    /* margin: .2em 0 .2em 1.5em; */
+    margin: 0.25rem;
 }
 
 .dokuwiki img.mediacenter {

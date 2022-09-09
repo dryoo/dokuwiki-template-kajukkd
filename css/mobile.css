@@ -116,6 +116,11 @@
         width: 100%;
         margin: 0.5em 0;
     }
+    .dokuwiki img.medialeft {
+        width:49%;
+        margin:0 0 0.5rem 0;
+        border-radius: __border_radius__;
+    }
 }
 
 

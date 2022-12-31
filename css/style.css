@@ -547,3 +547,6 @@ pre {
     text-decoration: none;
     background: none;
 }
+
+div.dokuwiki div#disqus__thread
+{ width:100%!important;}

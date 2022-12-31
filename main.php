@@ -169,6 +169,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
                             p_render('xhtml', p_get_instructions('{{backlinks>.}}'), $info);
                         ?>
 
+                        <?php /* disqus */
+                        global $ACT;
+                        if ($ACT == 'show') {
+                            $disqus = &plugin_load('syntax', 'disqus');
+                            if ($disqus) echo $disqus->_disqus($shortname);
+                        }
+                        ?>
                     </div>
                 </main><!-- /content -->
 
@@ -221,7 +228,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
     <!--- 메뉴~~    --->
     <div class="mm-menu-bg"></div>
     <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
-                               
+
     <nav id="mm-menu" class="mm-menu">
 
         <!-- ********** ASIDE ********** -->

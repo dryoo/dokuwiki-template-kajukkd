@@ -62,9 +62,9 @@ function _tpl_logo($return = false)
     $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
 	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
 	if (page_exists($_nstartpage)) {	
-		$out = tpl_link(wl($_nstartpage),  $out, '', 1);
+		$out = tpl_link(wl($_nstartpage,'',true),  $out, '', 1);
 	} 		else {
-		$out = tpl_link(wl(),  $out, '', 1);
+		$out = tpl_link(wl('','',true),  $out, '', 1);
 	}
     if ($return) return $out;
     echo $out;
@@ -83,9 +83,9 @@ function _tpl_icon($return = false)
 	// if namespace_start_page exist then go there or go to home
 	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
 	if (page_exists($_nstartpage)) {	
-		$out = tpl_link(wl($_nstartpage),  $out, '', 1);
+		$out = tpl_link(wl($_nstartpage,'',true),  $out, '', 1);
 	} 		else {
-		$out = tpl_link(wl(),  $out, '', 1);
+		$out = tpl_link(wl('','',true),  $out, '', 1);
 	}
     if ($return) return $out;
     echo $out;

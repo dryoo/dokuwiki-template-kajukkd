@@ -60,8 +60,12 @@ function _tpl_logo($return = false)
     $logoSize = array();
     $logo = tpl_getMediaFile(array(':' . $INFO['namespace'] . ':logo.jpg', ':' . $INFO['namespace'] . ':logo.png',  ':logo.png', ':wiki:dokuwiki-128.png', ':wiki:logo.png', 'images/logo.png'), false, $logoSize);
     $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
-    //  $out=tpl_link(wl('..:'),$out,'',1);
-    $out = tpl_link(wl($INFO['namespace'] . ':' . $conf['start'], '', true), $out, '', 1);
+	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
+	if (page_exists($_nstartpage)) {	
+		$out = tpl_link(wl($_nstartpage),  $out, '', 1);
+	} 		else {
+		$out = tpl_link(wl(),  $out, '', 1);
+	}
     if ($return) return $out;
     echo $out;
     return true;
@@ -76,8 +80,13 @@ function _tpl_icon($return = false)
     $logoSize = array();
     $logo = tpl_getMediaFile(array(':' . $INFO['namespace'] . ':icon.png',':' . $INFO['namespace'] . ':logo.jpg', ':' . $INFO['namespace'] . ':logo.png',  ':logo.png', ':wiki:dokuwiki-128.png', ':wiki:logo.png', 'images/logo.png'), false, $logoSize);
     $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
-    //  $out=tpl_link(wl('..:'),$out,'',1);
-    $out = tpl_link(wl($INFO['namespace'] . ':' . $conf['start'], '', true), $out, '', 1);
+	// if namespace_start_page exist then go there or go to home
+	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
+	if (page_exists($_nstartpage)) {	
+		$out = tpl_link(wl($_nstartpage),  $out, '', 1);
+	} 		else {
+		$out = tpl_link(wl(),  $out, '', 1);
+	}
     if ($return) return $out;
     echo $out;
     return true;

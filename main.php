@@ -232,7 +232,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
     <nav id="mm-menu" class="mm-menu">
 
         <!-- ********** ASIDE ********** -->
-        <? php // if ($showSidebar) : 
+        <?php // if ($showSidebar) : 
         ?>
         <nav id="dokuwiki__aside" aria-label="<?php echo $lang['sidebar'] ?>">
             <div class="mm-menu__header text-center">

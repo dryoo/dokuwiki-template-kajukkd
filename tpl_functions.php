@@ -76,7 +76,6 @@ function _tpl_logo($return = false)
     return true;
 }
 
-
 //
 // Left upper corner Icon
 //
@@ -101,7 +100,9 @@ function _tpl_icon($return = false)
     return true;
 }
 
-
+//
+//  Background Image
+// 
 
 function _tpl_background($return = false)
 {
@@ -109,8 +110,9 @@ function _tpl_background($return = false)
     $bg = ('background.jpg');
     $logoSize = array();
     $img = tpl_getMediaFile(array(
-        ':' . $INFO['namespace'] . ':' . $bg,        ':' . $bg, 'images/background.png'
-        //,         'images/background.png'
+        ':'.$INFO['namespace'] . ':' . $bg,  // Namespace
+		':'.$bg,                             // Main
+		'images/background.jpg'              // Plugin default
     ), true);
     $out = $img;
     if ($return) return $out;

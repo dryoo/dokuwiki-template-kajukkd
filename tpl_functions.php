@@ -52,16 +52,21 @@ function _tpl_detailtools()
     echo tpl_action('img_backto', 1, 'li', 1);
 }
 
+//
+// Sidebar logo
+//
 function _tpl_logo($return = false)
 {
     global $INFO;
     global $conf;
+	global $ID;
 
     $logoSize = array();
     $logo = tpl_getMediaFile(array(':' . $INFO['namespace'] . ':logo.jpg', ':' . $INFO['namespace'] . ':logo.png',  ':logo.png', ':wiki:dokuwiki-128.png', ':wiki:logo.png', 'images/logo.png'), false, $logoSize);
     $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
+
 	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
-	if (page_exists($_nstartpage)) {	
+	if (page_exists($_nstartpage) && ($_nstartpage!=$ID)) {	
 		$out = tpl_link(wl($_nstartpage,'',true),  $out, '', 1);
 	} 		else {
 		$out = tpl_link(wl('','',true),  $out, '', 1);
@@ -72,17 +77,21 @@ function _tpl_logo($return = false)
 }
 
 
+//
+// Left upper corner Icon
+//
 function _tpl_icon($return = false)
 {
     global $INFO;
     global $conf;
-
+	global $ID;
+	
     $logoSize = array();
     $logo = tpl_getMediaFile(array(':' . $INFO['namespace'] . ':icon.png',':' . $INFO['namespace'] . ':logo.jpg', ':' . $INFO['namespace'] . ':logo.png',  ':logo.png', ':wiki:dokuwiki-128.png', ':wiki:logo.png', 'images/logo.png'), false, $logoSize);
     $out = '<div><img class="logo" src="' . $logo . '" alt="' . $conf['title'] . '" id="dokuwiki__top" accesskey="h" title="[H]" ></div>';
 	// if namespace_start_page exist then go there or go to home
 	$_nstartpage = $INFO['namespace'] . ':' . $conf['start'];
-	if (page_exists($_nstartpage)) {	
+	if (page_exists($_nstartpage) && ($_nstartpage!=$ID)) {	
 		$out = tpl_link(wl($_nstartpage,'',true),  $out, '', 1);
 	} 		else {
 		$out = tpl_link(wl('','',true),  $out, '', 1);
@@ -108,6 +117,9 @@ function _tpl_background($return = false)
     echo $out;
     return true;
 }
+
+
+
 
 function _tpl_title($return = false)
 {

@@ -535,9 +535,9 @@ pre {
 }
 
 #smartbtn a {
-    /* float: right;  */
+    /* float: right; 
     padding: 0.5rem;
-    margin: 0.25rem;
+    margin: 0.25rem; */
     color: __theme_color__;
     font-family: 'icomoon' !important;
     font-size: 2rem;

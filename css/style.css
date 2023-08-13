@@ -554,3 +554,8 @@ div.dokuwiki div#disqus__thread
 div.dokuwiki img.medialeft {
 	border-radius:0.25rem;
 }
+
+div.dokuwiki a:link {
+	display:inline-block;
+}
+	

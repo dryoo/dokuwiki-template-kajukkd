@@ -550,3 +550,7 @@ pre {
 
 div.dokuwiki div#disqus__thread
 { width:100%!important;}
+
+div.dokuwiki img.medialeft {
+	border-radius:0.25rem;
+}
